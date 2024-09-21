@@ -1,0 +1,76 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 50px;
+}
+
+.order {
+  padding: 30px 40px;
+  margin: 0;
+  list-style-type: none;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  grid-column: 1;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.price {
+  grid-column: 2;
+  grid-row: 2;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 30px 40px;
+  border-radius: 5px;
+
+  h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 30px;
+    margin-top: 0;
+  }
+
+  hr {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 40%;
+    margin-left: 0;
+  }
+
+  button {
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+      border-color: #fff;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.fade {
+  animation: fade 1s both;
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}

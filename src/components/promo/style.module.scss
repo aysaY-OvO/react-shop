@@ -1,0 +1,47 @@
+.promo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  background-color: #dce5e2;
+  padding: 0 55px;
+  border-radius: 33px;
+  margin-bottom: 75px;
+
+  .text {
+    grid-column: 1;
+    padding-top: 145px;
+
+    h1 {
+      font-size: 58px;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+
+  button {
+    grid-column: 1;
+    justify-self: start;
+    align-self: start;
+    padding: 15px 53px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+  }
+
+  img {
+    grid-row: 1 / -1;
+    grid-column: 2;
+  }
+}

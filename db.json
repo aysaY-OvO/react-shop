@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "image": "./src/assets/image/catalog/macbook.jpg",
+      "title": "MacBook Pro 13",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet",
+      "price": "1,200.00",
+      "id": "df3d"
+    },
+    {
+      "image": "./src/assets/image/catalog/watch.jpg",
+      "title": "Smart Galaxy Watch 3",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "price": "199.00",
+      "id": "4282"
+    },
+    {
+      "image": "./src/assets/image/catalog/macbook2.jpg",
+      "title": "MacBook Air M1",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "price": "1,009.00",
+      "id": "fa23"
+    },
+    {
+      "image": "./src/assets/image/catalog/ipad.jpg",
+      "title": "iPad",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+      "price": "610.00",
+      "id": "4648"
+    },
+    {
+      "image": "./src/assets/image/catalog/macbook.jpg",
+      "title": "MacBook Pro 13",
+      "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet",
+      "price": "1,200.00",
+      "id": "aa38"
+    }
+  ]
+}
