@@ -2,7 +2,7 @@
 
 Простой интернет-магазин написанный на *React + Vite*.
 
-Для разворачивания проекта необходимо:
+## Getting Started
 
 ```bash
 npx json-server db.json
