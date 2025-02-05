@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styles from './style.module.scss';
 
 import image from '../../assets/image/promo-image.jpg'

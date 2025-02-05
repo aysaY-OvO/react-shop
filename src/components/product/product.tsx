@@ -1,8 +1,17 @@
+import React from 'react';
+
 import Button from '../ui/button';
 
 import styles from './style.module.scss';
 
-export default function Product({product, onAddToCart}) {
+import { ProductType } from '../../types/types';
+
+interface ProductPropTypes {
+  product: ProductType,
+  onAddToCart: (product: ProductType) => void
+}
+
+export default function Product({product, onAddToCart}: ProductPropTypes) {
   const {description, image, price, title, id} = product;
 
   return (

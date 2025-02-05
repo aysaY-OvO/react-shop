@@ -1,9 +1,16 @@
-import React from 'react';
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import styles from './style.module.scss';
 
-export default function CartItem({product, cartList, cartHandler}) {
+import { ProductType, CartItemType } from '../../types/types';
+
+interface CartItemPropTypes {
+  product: ProductType,
+  cartList: CartItemType[],
+  cartHandler: () => void;
+}
+
+export default function CartItem({product, cartList, cartHandler}: CartItemPropTypes) {
   const {image, price, title, id, amount} = product;
 
   const [productCount, setProductCount] = useState(amount);
@@ -13,7 +20,7 @@ export default function CartItem({product, cartList, cartHandler}) {
     cartHandler();
   }, []);
 
-  const changeProductAmount = (product) => {
+  const changeProductAmount = (product: ProductType) => {
     if (cartList.includes(product)) {
       cartList[cartList.indexOf(product)].amount = product.amount;
     }
@@ -21,32 +28,32 @@ export default function CartItem({product, cartList, cartHandler}) {
     cartHandler();
   };
 
-  const removeProduct = (product, evt) => {
-    const target = evt.target;
+  const removeProduct = (product: ProductType, evt: React.MouseEvent<HTMLButtonElement>) => {
+    const target = evt.target as Element;
     if (cartList.includes(product)) {
-      cartList.splice(cartList[cartList.indexOf(product)], 1);
+      cartList.splice(cartList.indexOf(product), 1);
     }
     localStorage.setItem('order', JSON.stringify(cartList));
     setMainClassName(`${mainClassName} ${styles.fade}`);
     setTimeout(() => {
-      target.closest('li').remove();
+      target.closest('li')?.remove();
     }, 300);
     cartHandler();
   };
 
-  const setMinValue = ({target}) => {
+  const setMinValue = ({target}: React.ChangeEvent<HTMLInputElement>) => {
     let { value, min } = target;
-    value = Math.max(Number(min), Number(value));
-    setProductCount(value);
+    const numericValue = Math.max(Number(min), Number(value));
+    setProductCount(numericValue);
   };
 
-  const onClickMinusHandler = (num) => {
+  const onClickMinusHandler = (num: number) => {
     setProductCount(num > 0 ? num - 1 : num = 0);
     product.amount !== 0 ? product.amount -= 1 : product.amount = 0;
     changeProductAmount(product);
   }
 
-  const onClickPlusHandler = (num) => {
+  const onClickPlusHandler = (num: number) => {
     setProductCount(num + 1);
     product.amount += 1;
     changeProductAmount(product);

@@ -1,19 +1,19 @@
 import axios from 'axios';
-import { CartItem, Product } from '../types/types';
+import { CartItemType, ProductType } from '../types/types';
 
 class CatalogService {
-  private cartList: CartItem[];
+  private cartList: CartItemType[];
 
   constructor() {
     this.cartList = [];
   }
 
-  async getProducts(): Promise<Product[]> {
+  async getProducts(): Promise<ProductType[]> {
     const {data} = await axios.get('http://localhost:3000/products');
     return data;
   }
 
-  async getCartProducts(): Promise<CartItem[]> {
+  async getCartProducts(): Promise<CartItemType[]> {
     const {data} = await axios.get('http://localhost:3000/cart');
     return data;
   }

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 
 import styles from './style.module.scss';
@@ -46,7 +48,7 @@ export default function Header() {
           </li>
         }
         <li className={styles.parent}>
-          <span href="#">
+          <span>
             Solutions
             <img src={arrow} width={12} height={8} alt="" />
             <ul className={styles.submenu}>

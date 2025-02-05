@@ -2,10 +2,10 @@ import React from 'react';
 import Header from '../../components/header/header';
 import CartList from '../../components/cart-list/cart-list';
 
-import { CartItem } from '../../types/types';
+import { CartItemType } from '../../types/types';
 
 export default function CartPage() {
-  const cartList: CartItem[] = JSON.parse(localStorage.getItem('order') || '[]');
+  const cartList: CartItemType[] = JSON.parse(localStorage.getItem('order') || '[]');
 
   return (
     <div className='wrapper'>

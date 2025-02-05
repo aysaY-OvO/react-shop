@@ -10,6 +10,10 @@ export default function Catalog() {
     queryFn: () => catalogService.getProducts()
   })
 
+  if (!data) {
+    return <p>Loading.....</p>
+  }
+
   return (
     <div className='wrapper'>
       <Header/>
